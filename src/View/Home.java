@@ -128,7 +128,7 @@ public class Home extends javax.swing.JFrame {
         Background.setMaximumSize(new java.awt.Dimension(1366, 768));
         Background.setMinimumSize(new java.awt.Dimension(1366, 768));
         Background.setPreferredSize(new java.awt.Dimension(1366, 768));
-        getContentPane().add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1340, 830));
+        getContentPane().add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 1340, 830));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
