@@ -50,7 +50,7 @@ public class vehicle_Details extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Vehicle Details");
 
-        jLabel2.setText("Customer           :");
+        jLabel2.setText("Customer ID        :");
 
         jLabel3.setText("Vehicle ID            :");
 
