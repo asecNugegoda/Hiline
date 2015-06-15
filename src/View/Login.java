@@ -34,6 +34,7 @@ public class Login extends javax.swing.JFrame {
         username = new javax.swing.JTextField();
         password = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         login = new javax.swing.JLabel();
         Background = new javax.swing.JLabel();
 
@@ -64,6 +65,9 @@ public class Login extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 490, 150, 50));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Hiline.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 150, 610, 80));
 
         login.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/loger1.png"))); // NOI18N
         jPanel1.add(login, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 230, -1, -1));
@@ -151,6 +155,7 @@ public class Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Background;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel login;
     private javax.swing.JPasswordField password;
