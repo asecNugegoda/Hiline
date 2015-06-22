@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package View;
 
 /**
@@ -31,8 +30,6 @@ public class grn extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        time = new javax.swing.JTextField();
-        date = new javax.swing.JTextField();
         jButton11 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -69,19 +66,8 @@ public class grn extends javax.swing.JFrame {
         });
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 0, 30, 30));
 
-        time.setBackground(new java.awt.Color(51, 51, 51));
-        time.setForeground(new java.awt.Color(255, 255, 255));
-        time.setBorder(null);
-        time.setOpaque(false);
-        jPanel1.add(time, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 0, 120, -1));
-
-        date.setBackground(new java.awt.Color(51, 51, 51));
-        date.setForeground(new java.awt.Color(255, 255, 255));
-        date.setBorder(null);
-        date.setOpaque(false);
-        jPanel1.add(date, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 0, 120, -1));
-
         jButton11.setBackground(new java.awt.Color(255, 255, 255));
+        jButton11.setText("Home");
         jButton11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton11ActionPerformed(evt);
@@ -115,8 +101,12 @@ public class grn extends javax.swing.JFrame {
         });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 630, 250, 60));
 
-        qty.setBackground(new java.awt.Color(51, 51, 51));
         qty.setForeground(new java.awt.Color(255, 255, 255));
+        qty.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                qtyActionPerformed(evt);
+            }
+        });
         jPanel1.add(qty, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 120, 130, 30));
 
         jLabel3.setBackground(new java.awt.Color(51, 51, 51));
@@ -194,11 +184,12 @@ public class grn extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        
+
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        
+        new Home().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -206,24 +197,28 @@ public class grn extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-      
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        
+
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseDragged
-        
+
     }//GEN-LAST:event_jPanel1MouseDragged
 
     private void jPanel1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseMoved
-        
+
     }//GEN-LAST:event_jPanel1MouseMoved
 
     private void totActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_totActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_totActionPerformed
+
+    private void qtyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_qtyActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_qtyActionPerformed
 
     /**
      * @param args the command line arguments
@@ -260,7 +255,6 @@ public class grn extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField date;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton2;
@@ -277,7 +271,6 @@ public class grn extends javax.swing.JFrame {
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField proid;
     private javax.swing.JTextField qty;
-    private javax.swing.JTextField time;
     private javax.swing.JTextField tot;
     // End of variables declaration//GEN-END:variables
 }

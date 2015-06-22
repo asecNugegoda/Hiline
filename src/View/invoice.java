@@ -68,6 +68,7 @@ public class invoice extends javax.swing.JFrame {
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 0, 30, 30));
 
         jButton11.setBackground(new java.awt.Color(51, 51, 51));
+        jButton11.setText("Home");
         jButton11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton11ActionPerformed(evt);
