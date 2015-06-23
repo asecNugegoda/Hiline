@@ -6,6 +6,8 @@
 
 package View;
 
+import View.Home;
+
 /**
  *
  * @author Sj
@@ -32,11 +34,7 @@ public class User_Manage extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
-<<<<<<< HEAD
-        jLabel2 = new javax.swing.JLabel();
-=======
         jButton1 = new javax.swing.JButton();
->>>>>>> origin/master
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -72,10 +70,6 @@ public class User_Manage extends javax.swing.JFrame {
         });
         jPanel2.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 280, 170, 170));
 
-<<<<<<< HEAD
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Hiline.png"))); // NOI18N
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 50, 610, 80));
-=======
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Home.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,12 +77,11 @@ public class User_Manage extends javax.swing.JFrame {
             }
         });
         jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 590, 150, 170));
->>>>>>> origin/master
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(51, 0, 51));
         jLabel3.setText("User Managment");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 150, 280, 70));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 20, 280, 70));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/18032.jpg"))); // NOI18N
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1370, 770));
@@ -156,7 +149,6 @@ public class User_Manage extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
