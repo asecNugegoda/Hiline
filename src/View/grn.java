@@ -30,7 +30,6 @@ public class grn extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jButton11 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
@@ -41,6 +40,7 @@ public class grn extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         tot = new javax.swing.JTextField();
+        jButton4 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -66,15 +66,6 @@ public class grn extends javax.swing.JFrame {
         });
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 0, 30, 30));
 
-        jButton11.setBackground(new java.awt.Color(255, 255, 255));
-        jButton11.setText("Home");
-        jButton11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton11ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(1260, 690, 80, 70));
-
         jScrollPane1.setBackground(new java.awt.Color(51, 51, 51));
         jScrollPane1.setForeground(new java.awt.Color(255, 255, 255));
 
@@ -99,7 +90,7 @@ public class grn extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 630, 250, 60));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 620, 250, 60));
 
         qty.setForeground(new java.awt.Color(255, 255, 255));
         qty.addActionListener(new java.awt.event.ActionListener() {
@@ -132,7 +123,7 @@ public class grn extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 630, 260, 60));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 620, 260, 60));
 
         jButton3.setBackground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Reset");
@@ -141,7 +132,7 @@ public class grn extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 630, 250, 60));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 620, 250, 60));
 
         tot.setBackground(new java.awt.Color(51, 51, 51));
         tot.setForeground(new java.awt.Color(255, 255, 255));
@@ -151,6 +142,14 @@ public class grn extends javax.swing.JFrame {
             }
         });
         jPanel1.add(tot, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 120, 130, 30));
+
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Home.png"))); // NOI18N
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 630, 90, 100));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel6.setText("GRN");
@@ -187,11 +186,6 @@ public class grn extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jLabel2MouseClicked
 
-    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        new Home().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jButton11ActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -219,6 +213,11 @@ public class grn extends javax.swing.JFrame {
     private void qtyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_qtyActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_qtyActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        new Home().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -256,9 +255,9 @@ public class grn extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
