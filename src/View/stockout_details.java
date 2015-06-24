@@ -75,11 +75,11 @@ public class stockout_details extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Product ID", "Product Name", "Quantity"
+                "Stockout ID", "Product ID", "Product Name", "Quantity"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                true, false, true
+                true, true, false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -89,7 +89,7 @@ public class stockout_details extends javax.swing.JFrame {
         jTable1.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(184, 232, 1051, 383));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, 1051, 383));
 
         jButton3.setText("Cancell");
         jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 685, 100, 40));
