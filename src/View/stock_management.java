@@ -73,7 +73,7 @@ public class stock_management extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        new stock_detail().setVisible(true);
+        new Stock_detail().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
