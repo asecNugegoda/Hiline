@@ -70,7 +70,7 @@ public class User_Manage extends javax.swing.JFrame {
         });
         jPanel2.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 280, 170, 170));
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Home.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Home.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
