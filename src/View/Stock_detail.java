@@ -73,7 +73,7 @@ public class Stock_detail extends javax.swing.JFrame {
         jTable1.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(jTable1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 239, 1051, 383));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 1051, 383));
 
         jButton2.setText("Remove");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -81,10 +81,10 @@ public class Stock_detail extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(653, 413, 83, 35));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 690, 83, 35));
 
         jButton5.setText("Add");
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(657, 413, 75, 35));
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 690, 75, 35));
 
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/18032.jpg"))); // NOI18N
         Background.setMaximumSize(new java.awt.Dimension(1366, 768));
