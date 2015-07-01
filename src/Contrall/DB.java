@@ -15,10 +15,10 @@ import java.sql.DriverManager;
  */
 public class DB {
     public static Connection con()throws Exception{
-      
-               Class.forName("com.mysql.jdbc.Driver");
-               Connection c =DriverManager.getConnection("jdbc:mysql://localhost:3306/er","root","123");
-                return c;
+        System.out.println("at connetion");
+              Class.forName("com.mysql.jdbc.Driver");
+        Connection c=DriverManager.getConnection("jdbc:mysql://localhost:3306/hiline","root","123");
+        return c;
         
     
       

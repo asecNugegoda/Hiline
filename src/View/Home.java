@@ -55,12 +55,13 @@ public class Home extends javax.swing.JFrame {
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/users.png"))); // NOI18N
         jButton2.setOpaque(false);
+        jButton2.setRolloverIcon(new javax.swing.ImageIcon("F:\\Master Projects\\Hiline\\src\\images\\usersDetails.png")); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 310, 180, 180));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 260, 180, 180));
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/stock.png"))); // NOI18N
         jButton3.setOpaque(false);
@@ -69,11 +70,16 @@ public class Home extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 310, 180, 180));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 260, 180, 180));
 
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/products.png"))); // NOI18N
         jButton4.setOpaque(false);
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 310, 170, 180));
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 260, 170, 180));
 
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/reports.png"))); // NOI18N
         jButton5.setOpaque(false);
@@ -82,7 +88,7 @@ public class Home extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 310, 180, 180));
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 260, 180, 180));
 
         jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/reports.png"))); // NOI18N
         jButton9.setOpaque(false);
@@ -91,11 +97,11 @@ public class Home extends javax.swing.JFrame {
                 jButton9ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 520, 180, 180));
+        getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 470, 180, 180));
 
         jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/products.png"))); // NOI18N
         jButton10.setOpaque(false);
-        getContentPane().add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 520, 170, 180));
+        getContentPane().add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 470, 170, 180));
 
         jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/settings.png"))); // NOI18N
         jButton11.setOpaque(false);
@@ -104,7 +110,7 @@ public class Home extends javax.swing.JFrame {
                 jButton11ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 520, 180, 180));
+        getContentPane().add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 470, 180, 180));
 
         jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/customer.png"))); // NOI18N
         jButton12.setOpaque(false);
@@ -113,24 +119,24 @@ public class Home extends javax.swing.JFrame {
                 jButton12ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 520, 180, 180));
+        getContentPane().add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 470, 180, 180));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Hiline.png"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 110, 610, 80));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 60, 610, 80));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/login.png"))); // NOI18N
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 310, 110));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 310, 110));
 
         jLabel2.setFont(new java.awt.Font("Lithos Pro Regular", 0, 48)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(153, 0, 0));
         jLabel2.setText("Home");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 210, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 160, -1, -1));
 
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/18032.jpg"))); // NOI18N
         Background.setMaximumSize(new java.awt.Dimension(1366, 768));
         Background.setMinimumSize(new java.awt.Dimension(1366, 768));
         Background.setPreferredSize(new java.awt.Dimension(1366, 768));
-        getContentPane().add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 1650, 880));
+        getContentPane().add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1590, 860));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -163,6 +169,11 @@ public class Home extends javax.swing.JFrame {
         new customer_management().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton12ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+      new product_details1().setVisible(true);
+      this.dispose();
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments

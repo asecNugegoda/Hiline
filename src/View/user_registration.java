@@ -5,6 +5,9 @@
  */
 package View;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Sajith Reshan
@@ -43,24 +46,24 @@ public class user_registration extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
+        Tlastname = new javax.swing.JTextField();
+        Tusername = new javax.swing.JTextField();
+        Temail = new javax.swing.JTextField();
+        Tnic = new javax.swing.JTextField();
+        Tfname = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jComboBox1 = new javax.swing.JComboBox();
+        Tadress = new javax.swing.JTextArea();
+        ComEmploytype = new javax.swing.JComboBox();
         jLabel12 = new javax.swing.JLabel();
-        jTextField10 = new javax.swing.JTextField();
+        Tcontactnum = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        Tdateofbirth = new javax.swing.JTextField();
+        rfemale = new javax.swing.JRadioButton();
+        Tpass = new javax.swing.JPasswordField();
+        rmale = new javax.swing.JRadioButton();
         jLabel16 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jButton7 = new javax.swing.JButton();
@@ -148,23 +151,22 @@ public class user_registration extends javax.swing.JFrame {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 210, -1, -1));
 
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        Tlastname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                TlastnameActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 320, 230, 30));
-        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 270, 230, 30));
-        jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 370, 230, 30));
-        jPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 230, 230, 30));
+        jPanel1.add(Tlastname, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 320, 230, 30));
+        jPanel1.add(Tusername, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 270, 230, 30));
+        jPanel1.add(Temail, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 370, 230, 30));
+        jPanel1.add(Tnic, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 230, 230, 30));
 
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+        Tfname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
+                TfnameActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 270, 230, 30));
-        jPanel1.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 320, 230, 30));
+        jPanel1.add(Tfname, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 270, 230, 30));
 
         jButton3.setText("Add");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -180,37 +182,38 @@ public class user_registration extends javax.swing.JFrame {
         jButton5.setText("Update");
         jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 640, 130, 40));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        Tadress.setColumns(20);
+        Tadress.setRows(5);
+        jScrollPane1.setViewportView(Tadress);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 500, 230, 70));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        ComEmploytype.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        ComEmploytype.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                ComEmploytypeActionPerformed(evt);
             }
         });
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 220, 230, 30));
+        jPanel1.add(ComEmploytype, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 220, 230, 30));
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel12.setText("Password              :");
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 310, 170, 40));
-        jPanel1.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 460, 230, 30));
+        jPanel1.add(Tcontactnum, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 460, 230, 30));
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel17.setText("Gender                 :");
         jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 420, 170, 30));
-        jPanel1.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 370, 230, 30));
+        jPanel1.add(Tdateofbirth, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 370, 230, 30));
 
-        jRadioButton1.setText("Female");
-        jRadioButton1.setOpaque(false);
-        jPanel1.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 420, -1, -1));
+        rfemale.setText("Female");
+        rfemale.setOpaque(false);
+        jPanel1.add(rfemale, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 420, -1, -1));
+        jPanel1.add(Tpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 320, 230, 30));
 
-        jRadioButton2.setText("Male");
-        jRadioButton2.setOpaque(false);
-        jPanel1.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 420, -1, -1));
+        rmale.setText("Male");
+        rmale.setOpaque(false);
+        jPanel1.add(rmale, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 420, -1, -1));
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel16.setText("Email                   :");
@@ -229,7 +232,7 @@ public class user_registration extends javax.swing.JFrame {
         jPanel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 580, 90, 110));
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/18032.jpg"))); // NOI18N
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1370, 770));
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 1370, 770));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -245,21 +248,50 @@ public class user_registration extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    
+    private void ComEmploytypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComEmploytypeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
-
+    }//GEN-LAST:event_ComEmploytypeActionPerformed
+    String Gender;
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-       
+        try{
+            if (rmale.isSelected()) {
+                Gender="Male";
+            }if (rfemale.isSelected()) {
+                Gender="Female";
+            }
+            String password = String.valueOf(Tpass.getPassword());
+            String accountStatus="active";
+            String userRole="admin";
+            String userName =Tusername.getText();
+            String[] adress =Tadress.getText().split(",");
+            String email = Temail.getText();
+            String picPath="abc/123";
+           
+            
+            String[] fields={Tnic.getText(),Tfname.getText(),Tlastname.getText(),Tdateofbirth.getText(),Tcontactnum.getText()};
+            
+            Model.queries.subssave("user_account_status","USER_ACCOUNT_STATUS_STATUS",accountStatus);
+            Model.queries.subssave("user_role","USER_ROLE_TYPE",userRole);
+            Model.queries.subssave("user_password","USER_PASSWORD_POWESWORD",password);
+            Model.queries.subssave("user_username","USER_USERNAME_NAME",userName);
+           //Model.queries.subssave("address",adress);
+            Model.queries.subssave("email","EMAIL_MAIL",email);
+            Model.queries.subssave("picture","PICTURE_PATH" ,picPath);
+           // Model.queries.Save("user", fields);
+            
+        }catch(Exception e){
+        e.printStackTrace();
+        }       
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+    private void TfnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TfnameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
+    }//GEN-LAST:event_TfnameActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void TlastnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TlastnameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_TlastnameActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         new Home().setVisible(true);
@@ -302,13 +334,22 @@ public class user_registration extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox ComEmploytype;
+    private javax.swing.JTextArea Tadress;
+    private javax.swing.JTextField Tcontactnum;
+    private javax.swing.JTextField Tdateofbirth;
+    private javax.swing.JTextField Temail;
+    private javax.swing.JTextField Tfname;
+    private javax.swing.JTextField Tlastname;
+    private javax.swing.JTextField Tnic;
+    private javax.swing.JPasswordField Tpass;
+    private javax.swing.JTextField Tusername;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton7;
-    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -328,17 +369,8 @@ public class user_registration extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
+    private javax.swing.JRadioButton rfemale;
+    private javax.swing.JRadioButton rmale;
     // End of variables declaration//GEN-END:variables
 }
