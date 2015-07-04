@@ -5,6 +5,13 @@
  */
 package View;
 
+import Model.SearchQuaries;
+import java.sql.ResultSet;
+import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Sajith Reshan
@@ -53,6 +60,15 @@ public class user_details extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("User ID    :");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 69, 24));
+
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextField1KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField1KeyTyped(evt);
+            }
+        });
         jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(98, 37, 210, 30));
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 1380, 10));
 
@@ -61,26 +77,41 @@ public class user_details extends javax.swing.JFrame {
 
             },
             new String [] {
-                "UID", "NIC", "Name", "Address", "Employ Type", "User Name", "Password", "E mail", "Contact Number"
+                "NIC", "Name", "Address", "Employ Type", "E mail", "Contact Number", "Account statusl", "User role"
             }
         ));
         jTable1.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(jTable1);
         if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(1).setPreferredWidth(300);
             jTable1.getColumnModel().getColumn(2).setPreferredWidth(300);
-            jTable1.getColumnModel().getColumn(3).setPreferredWidth(300);
         }
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 1220, 540));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 1340, 540));
 
-        jButton1.setText("jButton1");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 790, -1, -1));
+        jButton1.setText("Search All");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 770, 110, 40));
 
-        jButton2.setText("jButton2");
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 790, -1, -1));
+        jButton2.setText("BlackList");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 770, 100, 40));
 
-        jButton3.setText("jButton3");
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 790, -1, -1));
+        jButton3.setText("Remove");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 770, 100, 40));
 
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Home.png"))); // NOI18N
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -94,7 +125,7 @@ public class user_details extends javax.swing.JFrame {
         Background.setMaximumSize(new java.awt.Dimension(1366, 768));
         Background.setMinimumSize(new java.awt.Dimension(1366, 768));
         Background.setPreferredSize(new java.awt.Dimension(1366, 768));
-        jPanel1.add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1380, 840));
+        jPanel1.add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 1380, 840));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -114,6 +145,107 @@ public class user_details extends javax.swing.JFrame {
         new Home().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        try {
+            String adress="";
+            String adressid="";
+            String userroleid="";
+            String emailid="";
+            String statusid="";
+           
+            DefaultTableModel dt = (DefaultTableModel) jTable1.getModel();
+            ResultSet rs = SearchQuaries.DataSeach("user");
+              //making of the vector
+             
+             Vector v = new Vector();
+            //getting the foreghn key ids
+            
+           while (rs.next()) {   
+//            adressid=rs.getString(12);
+//            userroleid=rs.getString(8);
+//            emailid=rs.getString(11);
+//            statusid=rs.getString(7);
+//            
+             v.add(rs.getString(1)); 
+             v.add(rs.getString(2)); 
+             v.add(rs.getString(3)); 
+             v.add(rs.getString(4)); 
+             v.add(rs.getString(5)); 
+             v.add(rs.getString(6)); 
+             v.add(rs.getString(7)); 
+             v.add(rs.getString(8)); 
+          
+                
+               dt.addRow(v);
+               
+                   
+            }
+                //getting the adress
+//             ResultSet rs1 = SearchQuaries.adresearch("address",adressid);
+//             while (rs1.next()) {                
+//              adress=rs1.getString(2);
+//               adress+=rs1.getString(3);
+//               adress+= rs1.getString(4);
+//               adress+=rs1.getString(5);
+//                 System.out.println(adress);
+//                 v.add(adress);
+//                  dt.addRow(v);
+//            }
+         
+//              
+//              //get the foreghn key values
+//             ResultSet rs2 = SearchQuaries.Columsearch("USER_ROLE_TYPE", "user_role", userroleid);
+//             if (rs2.next()) {
+//                //v. add(rs2.getString(1));
+//            }
+//            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTextField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyTyped
+        try {
+            DefaultTableModel dt = (DefaultTableModel) jTable1.getModel();
+            ResultSet rsli = SearchQuaries.DataSeach("user");
+              Vector v = new Vector();
+            
+            
+           while (rsli.next()) {   
+//            adressid=rs.getString(12);
+//            userroleid=rs.getString(8);
+//            emailid=rs.getString(11);
+//            statusid=rs.getString(7);
+//            
+             v.add(rsli.getString(1)); 
+             v.add(rsli.getString(2)); 
+             v.add(rsli.getString(3)); 
+             v.add(rsli.getString(4)); 
+             v.add(rsli.getString(5)); 
+             v.add(rsli.getString(6)); 
+             v.add(rsli.getString(7)); 
+             v.add(rsli.getString(8)); 
+          
+                
+               dt.addRow(v);
+           }
+        }catch(Exception e){
+        e.printStackTrace();
+        }
+    }//GEN-LAST:event_jTextField1KeyTyped
+
+    private void jTextField1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1KeyReleased
 
     /**
      * @param args the command line arguments

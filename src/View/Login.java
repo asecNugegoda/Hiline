@@ -6,7 +6,10 @@
 
 package View;
 
+import Contrall.DB;
+import Model.SearchQuaries;
 import java.awt.Event;
+import java.sql.ResultSet;
 
 /**
  *
@@ -104,12 +107,31 @@ public class Login extends javax.swing.JFrame {
        
         String uname = username.getText();
         String pass  = new String(password.getPassword());
+        String Dusername="";
+        String Dpassword="";
+        String idPass="";
+        int i=0;
       
      try {
-            if(uname.equals("abc")&&pass.equals("123")){
+         ResultSet rs = SearchQuaries.Logger(uname);
+         while (rs.next()) {             
+             Dusername=rs.getString(2);
+             idPass=rs.getString(3);
+         }
+         ResultSet rs1 = SearchQuaries.ColumnidSearch("USER_PASSWORD_POWESWORD", "user_password", "idUSER_PASSWORD", idPass);
+         while (rs1.next()) {             
+             Dpassword=rs1.getNString(1);
+         }
+         //logger logic
+         if(i<3){
+            if(uname.equals(Dusername)&&pass.equals(Dpassword)){
                   System.out.println(pass);
                 new Home().setVisible(true);this.dispose();
-            }
+            }i++;
+             System.out.println("invalid user name or passwrod");
+            
+         }
+         this.dispose();
         } catch (Exception e) {
             e.printStackTrace();
         }

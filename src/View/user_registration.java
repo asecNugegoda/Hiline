@@ -5,6 +5,8 @@
  */
 package View;
 
+import Model.SearchQuaries;
+import java.sql.ResultSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -122,6 +124,11 @@ public class user_registration extends javax.swing.JFrame {
         jButton1.setText("Capture");
 
         jButton2.setText("Browse");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -253,32 +260,93 @@ public class user_registration extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ComEmploytypeActionPerformed
     String Gender;
+    @SuppressWarnings("empty-statement")
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         try{
+            //making of variables
             if (rmale.isSelected()) {
-                Gender="Male";
+                Gender="1";
             }if (rfemale.isSelected()) {
-                Gender="Female";
+                Gender="2";
             }
             String password = String.valueOf(Tpass.getPassword());
             String accountStatus="active";
             String userRole="admin";
             String userName =Tusername.getText();
-            String[] adress =Tadress.getText().split(",");
+            String adress[] =Tadress.getText().split(",");
             String email = Temail.getText();
             String picPath="abc/123";
-           
+            String JoinedTime="2015-2-3 5:40:11";
+       
+                    
+           //making foreighn key variables
+            String FRpassid="";
+            String FRaccountstatusid="";
+            String FRroleid="";
+            String FRusernameid="";
+            String FRGender="";
+            String FRemeil="";
+            String FRadress="";
+            String FRpic="";
             
-            String[] fields={Tnic.getText(),Tfname.getText(),Tlastname.getText(),Tdateofbirth.getText(),Tcontactnum.getText()};
+        
+            
+         
+            
+            //Saving the values to DB
             
             Model.queries.subssave("user_account_status","USER_ACCOUNT_STATUS_STATUS",accountStatus);
             Model.queries.subssave("user_role","USER_ROLE_TYPE",userRole);
+            Model.queries.subssave("gender","GENDER_TYPE",Gender);
             Model.queries.subssave("user_password","USER_PASSWORD_POWESWORD",password);
-            Model.queries.subssave("user_username","USER_USERNAME_NAME",userName);
-           //Model.queries.subssave("address",adress);
+            
+            Model.queries.AdressSave("address",adress);
             Model.queries.subssave("email","EMAIL_MAIL",email);
             Model.queries.subssave("picture","PICTURE_PATH" ,picPath);
-           // Model.queries.Save("user", fields);
+            
+               //getting the foreighn keys
+            //username and user pass
+            ResultSet rs = SearchQuaries.idsearch("idUSER_PASSWORD", "user_password");
+            if(rs.next()){ FRpassid=rs.getString(1);
+          }
+            //user related searches
+    
+            ResultSet rs1 = SearchQuaries.idsearch("idUSER_ACCOUNT_STATUS", "user_account_status");
+            if(rs1.next()){ ;FRaccountstatusid=rs1.getString(1);}
+            
+             ResultSet rs2 = SearchQuaries.idsearch("idUSER_ROLE", "user_role");
+            if(rs2.next()){ FRroleid=rs2.getString(1);;}
+            
+            ResultSet rs3 = SearchQuaries.idsearch("idUSER_USERNAME", "user_username");
+            if(rs3.next()){ FRusernameid=rs3.getString(1);}
+            
+            ResultSet rs4 = SearchQuaries.idsearch("idGENDER", "gender");
+            if(rs4.next()){ FRGender=rs4.getString(1);}
+            
+            ResultSet rs5 = SearchQuaries.idsearch("idEMAIL", "email");
+            if(rs5.next()){ FRemeil=rs5.getString(1);}
+            
+            ResultSet rs6 = SearchQuaries.idsearch("idADDRESS", "address");
+            if(rs6.next()){ FRadress=rs5.getString(1);}
+            
+            ResultSet rs7 = SearchQuaries.idsearch("idPICTURE", "picture");
+            if(rs7.next()){ FRpic=rs5.getString(1);}
+           
+            
+            
+            
+            
+            
+              //Saving of foreigh key tables
+           String[] col={"USER_USERNAME_NAME","USER_PASSWORD_idUSER_PASSWORD"};
+           String[] values={userName,FRpassid};
+               Model.queries.foreighnsave("user_username",col,values);
+               
+               
+           //Saving of the main user----------------------------------------------------------------
+                   
+            String[] fields={Tnic.getText(),Tfname.getText(),Tlastname.getText(),Tdateofbirth.getText(),Tcontactnum.getText(),JoinedTime,FRaccountstatusid,FRroleid,FRusernameid,FRGender,FRemeil,FRadress,FRpic};
+            Model.queries.Save("user", fields);
             
         }catch(Exception e){
         e.printStackTrace();
@@ -297,6 +365,12 @@ public class user_registration extends javax.swing.JFrame {
         new Home().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
