@@ -76,6 +76,7 @@ public class user_registration extends javax.swing.JFrame {
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Hiline.png"))); // NOI18N
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setMinimumSize(new java.awt.Dimension(1366, 768));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -241,18 +242,9 @@ public class user_registration extends javax.swing.JFrame {
         jPanel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 580, 90, 110));
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/18032.jpg"))); // NOI18N
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 1370, 770));
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1370, 770));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1366, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 768, Short.MAX_VALUE)
-        );
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1366, 768));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -280,8 +272,7 @@ public class user_registration extends javax.swing.JFrame {
             String picPath="abc/123";
             String JoinedTime="2015-2-3 5:40:11";
        
-                    
-           //making foreighn key variables
+            //making foreighn key variables
             String FRpassid="";
             String FRaccountstatusid="";
             String FRroleid="";
@@ -290,12 +281,7 @@ public class user_registration extends javax.swing.JFrame {
             String FRemeil="";
             String FRadress="";
             String FRpic="";
-            
-        
-            
-         
-            
-            //Saving the values to DB
+           //Saving the values to DB
             
             Model.queries.subssave("user_account_status","USER_ACCOUNT_STATUS_STATUS",accountStatus);
             Model.queries.subssave("user_role","USER_ROLE_TYPE",userRole);

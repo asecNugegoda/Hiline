@@ -18,6 +18,10 @@ public class Home extends javax.swing.JFrame {
      */
     public Home() {
         initComponents();
+       
+    }
+    public void USERname(String user){
+    jLabel5.setText(user);
     }
 
     /**
@@ -39,6 +43,7 @@ public class Home extends javax.swing.JFrame {
         jButton10 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
         jButton12 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -121,11 +126,14 @@ public class Home extends javax.swing.JFrame {
         });
         getContentPane().add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 470, 180, 180));
 
+        jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 60, 200, 80));
+
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Hiline.png"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 60, 610, 80));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/login.png"))); // NOI18N
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 310, 110));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 310, 110));
 
         jLabel2.setFont(new java.awt.Font("Lithos Pro Regular", 0, 48)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(153, 0, 0));
@@ -224,6 +232,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
