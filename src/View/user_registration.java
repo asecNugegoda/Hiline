@@ -9,6 +9,7 @@ import Model.SearchQuaries;
 import java.sql.ResultSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultComboBoxModel;
 
 /**
  *
@@ -21,6 +22,7 @@ public class user_registration extends javax.swing.JFrame {
      */
     public user_registration() {
         initComponents();
+       
     }
 
     /**
