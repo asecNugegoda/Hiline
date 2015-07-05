@@ -1,7 +1,9 @@
 package View;
 
-import hiline.DB;
+import Contrall.DB;
 import java.sql.ResultSet;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.table.DefaultTableModel;
 
 /*
@@ -9,9 +11,6 @@ import javax.swing.table.DefaultTableModel;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-
-
 /**
  *
  * @author Sajith Reshan
@@ -46,15 +45,19 @@ public class stock_in extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jSeparator1 = new javax.swing.JSeparator();
         jButton1 = new javax.swing.JButton();
-        sid = new javax.swing.JTextField();
+        grn = new javax.swing.JTextField();
         qty = new javax.swing.JTextField();
         cost = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
+        sid = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        time = new lu.tudor.santec.jtimechooser.JTimeChooser();
+        date = new com.toedter.calendar.JDateChooser();
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -67,24 +70,24 @@ public class stock_in extends javax.swing.JFrame {
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(638, 11, 86, 40));
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jLabel2.setText("Stock ID                 :");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 69, -1, -1));
+        jLabel2.setText("GRN  ID       :");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jLabel3.setText("Date                :");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 69, -1, -1));
+        jLabel3.setText("Date                  :");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 70, 140, -1));
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jLabel4.setText("Total Quantity         :");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, -1));
+        jLabel4.setText("Total Quantity    :");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 120, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jLabel5.setText("Total Cost        :");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 110, -1, -1));
+        jLabel5.setText("Total Cost      :");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 120, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel6.setText("Time             :");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1263, 69, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 70, -1, -1));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -94,11 +97,11 @@ public class stock_in extends javax.swing.JFrame {
                 {null, null, null, null, null}
             },
             new String [] {
-                "Stock Id", "Product Name", "Quantity", "Unit Price", "Location"
+                "Product ID", "Product Name", "Quantity", "Unit Price", "Location"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                true, false, true, true, true
+                false, true, true, true, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -122,18 +125,10 @@ public class stock_in extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1117, 207, 109, 28));
-        jPanel1.add(sid, new org.netbeans.lib.awtextra.AbsoluteConstraints(192, 72, 148, -1));
-        jPanel1.add(qty, new org.netbeans.lib.awtextra.AbsoluteConstraints(182, 113, 148, -1));
-        jPanel1.add(cost, new org.netbeans.lib.awtextra.AbsoluteConstraints(1097, 113, 152, -1));
-
-        jButton2.setText("Add Product ");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1244, 207, 109, 28));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 210, 160, 28));
+        jPanel1.add(grn, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 120, 220, -1));
+        jPanel1.add(qty, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 120, 210, -1));
+        jPanel1.add(cost, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 120, 210, -1));
 
         jButton3.setText("Search");
         jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 710, -1, -1));
@@ -145,6 +140,11 @@ public class stock_in extends javax.swing.JFrame {
         jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 710, -1, -1));
 
         jButton6.setText("Save");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 710, -1, -1));
 
         jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Home.png"))); // NOI18N
@@ -154,6 +154,21 @@ public class stock_in extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1260, 660, 80, 100));
+        jPanel1.add(sid, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 70, 220, -1));
+
+        jButton2.setText("New Location");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 210, 160, 28));
+
+        jLabel8.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel8.setText("Stock ID       :");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 69, -1, -1));
+        jPanel1.add(time, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 70, 210, -1));
+        jPanel1.add(date, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 70, 210, -1));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/18032.jpg"))); // NOI18N
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1370, 770));
@@ -164,28 +179,14 @@ public class stock_in extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        new product_registration().setVisible(true);
+        new product_registration1().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-    }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTable1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTable1KeyReleased
         try {
             dt = (DefaultTableModel) jTable1.getModel();
             String sid = dt.getValueAt(0, 1).toString();
-            ResultSet rs = DB.getConnection().createStatement().executeQuery("Select * from products where idPRODUCTS like '%''"+sid+"'");
+            ResultSet rs = DB.con().createStatement().executeQuery("Select * from products where idPRODUCTS like '%''" + sid + "'");
         } catch (Exception e) {
         }
     }//GEN-LAST:event_jTable1KeyReleased
@@ -194,6 +195,22 @@ public class stock_in extends javax.swing.JFrame {
         new Home().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        try {
+            SimpleDateFormat sf = new SimpleDateFormat("yyyy/MM/dd");
+            String day = sf.format(date.getDate());
+            int user = 0;
+            DB.con().createStatement().execute("INSERT INTO store_in values('" + 0 + "','" + time.getFormatedTime() + "','" + day + "','" + qty.getText() + "','" + sid.getText() + "','" + user + "','" + grn.getText() + "')");
+           // DB.con().createStatement().execute("INSERT INTO stored_products values('"++"')");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -229,9 +246,10 @@ public class stock_in extends javax.swing.JFrame {
             }
         });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField cost;
+    private com.toedter.calendar.JDateChooser date;
+    private javax.swing.JTextField grn;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -246,11 +264,13 @@ public class stock_in extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField qty;
     private javax.swing.JTextField sid;
+    private lu.tudor.santec.jtimechooser.JTimeChooser time;
     // End of variables declaration//GEN-END:variables
 }

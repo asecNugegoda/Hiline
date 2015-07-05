@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package Contrall;
 
 import java.sql.Connection;
@@ -14,15 +13,16 @@ import java.sql.DriverManager;
  * @author Sj
  */
 public class DB {
-    public static Connection con()throws Exception{
-        System.out.println("at connetion");
-              Class.forName("com.mysql.jdbc.Driver");
-        Connection c=DriverManager.getConnection("jdbc:mysql://localhost:3306/hiline","root","123");
-        return c;
-        
-    
-      
-    }  
-    }
-    
 
+    static Connection c;
+
+    public static Connection con() throws Exception {
+        System.out.println("at connetion");
+
+        if (c == null) {
+            Class.forName("com.mysql.jdbc.Driver");
+            c = DriverManager.getConnection("jdbc:mysql://localhost:3306/hiline", "root", "1234");
+        }
+        return c;
+    }
+}

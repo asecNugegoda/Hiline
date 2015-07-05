@@ -50,7 +50,7 @@ public class vehicle_Details extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Vehicle Details");
 
-        jLabel2.setText("Customer ID        :");
+        jLabel2.setText("Customer ID  :");
 
         jLabel3.setText("Vehicle ID            :");
 
@@ -103,7 +103,7 @@ public class vehicle_Details extends javax.swing.JFrame {
                         .addComponent(jButton2)
                         .addGap(18, 18, 18)
                         .addComponent(jButton3)
-                        .addContainerGap(32, Short.MAX_VALUE))
+                        .addContainerGap(73, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
