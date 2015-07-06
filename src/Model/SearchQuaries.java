@@ -16,7 +16,7 @@ import java.sql.ResultSet;
 public class SearchQuaries {
     public static ResultSet idsearch(String column,String table) throws Exception{
         System.out.println("at search");
-        ResultSet rs = DB.con().createStatement().executeQuery("Select "+column+" from "+table+"");
+        ResultSet rs = DB.con().createStatement().executeQuery("Select last("+column+") from "+table+"");
         
         return rs;
     }

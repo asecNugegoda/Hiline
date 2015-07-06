@@ -126,7 +126,10 @@ public class Login extends javax.swing.JFrame {
          if(i<3){
             if(uname.equals(Dusername)&&pass.equals(Dpassword)){
                   System.out.println(pass);
-                new Home().setVisible(true);this.dispose();
+                  Home home=new Home();
+                    home.setVisible(true);this.dispose();
+                    home.USERname(uname);
+                
             }i++;
              System.out.println("invalid user name or passwrod");
             

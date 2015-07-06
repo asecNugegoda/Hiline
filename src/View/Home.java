@@ -127,7 +127,7 @@ public class Home extends javax.swing.JFrame {
         getContentPane().add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 470, 180, 180));
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 60, 200, 80));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 80, 200, 80));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Hiline.png"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 60, 610, 80));
