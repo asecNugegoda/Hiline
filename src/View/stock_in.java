@@ -39,7 +39,6 @@ public class stock_in extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -47,7 +46,10 @@ public class stock_in extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         grn = new javax.swing.JTextField();
         qty = new javax.swing.JTextField();
-        cost = new javax.swing.JTextField();
+        location = new javax.swing.JTextField();
+        prodId = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
@@ -56,8 +58,6 @@ public class stock_in extends javax.swing.JFrame {
         sid = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
-        time = new lu.tudor.santec.jtimechooser.JTimeChooser();
-        date = new com.toedter.calendar.JDateChooser();
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -80,10 +80,6 @@ public class stock_in extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel4.setText("Total Quantity    :");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 120, -1, -1));
-
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jLabel5.setText("Total Cost      :");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 120, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel6.setText("Time             :");
@@ -128,7 +124,16 @@ public class stock_in extends javax.swing.JFrame {
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 210, 160, 28));
         jPanel1.add(grn, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 120, 220, -1));
         jPanel1.add(qty, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 120, 210, -1));
-        jPanel1.add(cost, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 120, 210, -1));
+        jPanel1.add(location, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, 220, -1));
+        jPanel1.add(prodId, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 150, 220, -1));
+
+        jLabel10.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel10.setText("Product id");
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 150, -1, -1));
+
+        jLabel9.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel9.setText("Location");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
 
         jButton3.setText("Search");
         jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 710, -1, -1));
@@ -167,8 +172,6 @@ public class stock_in extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel8.setText("Stock ID       :");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 69, -1, -1));
-        jPanel1.add(time, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 70, 210, -1));
-        jPanel1.add(date, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 70, 210, -1));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/18032.jpg"))); // NOI18N
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1370, 770));
@@ -247,8 +250,6 @@ public class stock_in extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField cost;
-    private com.toedter.calendar.JDateChooser date;
     private javax.swing.JTextField grn;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -258,19 +259,21 @@ public class stock_in extends javax.swing.JFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTextField location;
+    private javax.swing.JTextField prodId;
     private javax.swing.JTextField qty;
     private javax.swing.JTextField sid;
-    private lu.tudor.santec.jtimechooser.JTimeChooser time;
     // End of variables declaration//GEN-END:variables
 }
