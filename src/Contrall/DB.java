@@ -21,7 +21,7 @@ public class DB {
 
         if (c == null) {
             Class.forName("com.mysql.jdbc.Driver");
-            c = DriverManager.getConnection("jdbc:mysql://localhost:3306/hiline", "root", "1234");
+            c = DriverManager.getConnection("jdbc:mysql://localhost:3306/hiline", "root", "123");
         }
         return c;
     }

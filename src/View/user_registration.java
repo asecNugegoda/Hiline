@@ -6,10 +6,20 @@
 package View;
 
 import Model.SearchQuaries;
+import java.awt.Image;
+import java.io.File;
 import java.sql.ResultSet;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+import javax.swing.ComboBoxModel;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 
 /**
  *
@@ -21,8 +31,21 @@ public class user_registration extends javax.swing.JFrame {
      * Creates new form user_registration
      */
     public user_registration() {
-        initComponents();
-       
+        try {
+            initComponents();
+            DefaultComboBoxModel dcm =new DefaultComboBoxModel();
+            ComEmploytype.setModel(dcm);
+            Vector v = new Vector();
+            ResultSet rscom = SearchQuaries.DataSeach("user_role");
+            while(rscom.next()){
+                //v.add(rscom.getString(2));
+                dcm.addElement(rscom.getString(2));
+
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(user_registration.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
     }
 
     /**
@@ -47,7 +70,7 @@ public class user_registration extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
+        image = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         Tlastname = new javax.swing.JTextField();
@@ -121,7 +144,7 @@ public class user_registration extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(153, 153, 153));
 
-        jLabel11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        image.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jButton1.setText("Capture");
 
@@ -139,7 +162,7 @@ public class user_registration extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(image, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -150,7 +173,7 @@ public class user_registration extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(image, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
@@ -262,6 +285,7 @@ public class user_registration extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ComEmploytypeActionPerformed
     String Gender;
+    String path;
     @SuppressWarnings("empty-statement")
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         try{
@@ -271,14 +295,19 @@ public class user_registration extends javax.swing.JFrame {
             }if (rfemale.isSelected()) {
                 Gender="2";
             }
+                //setting the date
+                DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+                Date date = new Date();
+                
             String password = String.valueOf(Tpass.getPassword());
             String accountStatus="active";
-            String userRole="admin";
+            String userRole=ComEmploytype.getSelectedItem().toString();
+            System.out.println(userRole);
             String userName =Tusername.getText();
             String adress[] =Tadress.getText().split(",");
             String email = Temail.getText();
-            String picPath="abc/123";
-            String JoinedTime="2015-2-3 5:40:11";
+            String picPath=path;
+            String JoinedTime=dateFormat.format(date);
        
                     
            //making foreighn key variables
@@ -369,8 +398,21 @@ public class user_registration extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        
+        try {
+            JFileChooser jf = new JFileChooser();
+            jf.showOpenDialog(this);
+            File f = jf.getSelectedFile();
+            path = f.getAbsolutePath();
+            path = path.replace("\\", "/");
+            //-----------------------------
+            File ff = new File(path);
+            Image img = ImageIO.read(ff);
+            img = img.getScaledInstance(image.getWidth(), image.getHeight(), Image.SCALE_SMOOTH);
+            image.setIcon(new ImageIcon(img));
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -420,6 +462,7 @@ public class user_registration extends javax.swing.JFrame {
     private javax.swing.JTextField Tnic;
     private javax.swing.JPasswordField Tpass;
     private javax.swing.JTextField Tusername;
+    private javax.swing.JLabel image;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -428,7 +471,6 @@ public class user_registration extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
